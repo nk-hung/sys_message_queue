@@ -21,7 +21,8 @@ const messageService = {
                     console.log(`SEND multi Queue successfully!!`, msg.content.toString());
                     channel.ack(msg)
                 }, {
-                    noAsk: false
+                    noAsk: true,
+                    durable: true
                 })
             }, timeExpired)
         } catch (error) {
